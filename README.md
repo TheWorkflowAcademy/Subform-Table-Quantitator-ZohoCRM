@@ -15,27 +15,27 @@ Note: `zoho.crm.getRecords` has a default limit of 200 records per page. To acco
 
 ```javascript
 producttable = zoho.crm.getRecords("INSERT SUBFORM API NAME HERE"); 
-productmap = Map();
+productMap = Map();
 for each  p in producttable
 {
 	mp = Map();
 	mp.put("Quantity",0);
 	mp.put("Subtotal",0);
 	prod = p.get("Product_Name");             //Replace the API name accordingly
-	productmap.put(prod.get("name"),mp);      //Replace the API name accordingly
+	productMap.put(prod.get("name"),mp);      //Replace the API name accordingly
 }
 ```
 ### Perform the Summation
-Create another `loop` to get the sum of the qty/subtotal for each product by adding them up at every iteration while remapping var *producttable*. This works because when the specified key is already present in the map-variable, the key's associated value is replaced with the new given value (learn more: 
-https://www.zoho.com/creator/help/script/put-key.html). Once the iteration is complete, var *productmap* will contain the total qty & subtotal of each product in the subform.
+Create another `loop` to get the sum of the qty/subtotal for each product by adding them up at every iteration while remapping var *productMap*. This works because when the specified key is already present in the map-variable, the key's associated value is replaced with the new given value (learn more: 
+https://www.zoho.com/creator/help/script/put-key.html). Once the iteration is complete, var *productMap* will contain the total qty & subtotal of each product in the subform.
 
 ```javascript
 for each  p in producttable
 {
 	mp = Map();
-	mp.put("Quantity",productmap.get(p.get("Product_Name").get("name")).get("Quantity").toLong() + p.get("Quantity"));  
-	mp.put("Subtotal",productmap.get(p.get("Product_Name").get("name")).get("Subtotal").toLong() + p.get("Subtotal"));
-	productmap.put(p.get("Product_Name").get("name"),mp);
+	mp.put("Quantity",productMap.get(p.get("Product_Name").get("name")).get("Quantity").toLong() + p.get("Quantity"));  
+	mp.put("Subtotal",productMap.get(p.get("Product_Name").get("name")).get("Subtotal").toLong() + p.get("Subtotal"));
+	productMap.put(p.get("Product_Name").get("name"),mp);
 }
 
 //Replace the following API name accordingly - "Quantity", "Subtotal", "Product_Name", "name"
