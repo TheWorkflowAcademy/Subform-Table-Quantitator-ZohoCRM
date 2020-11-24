@@ -1,20 +1,20 @@
-producttable = zoho.crm.getRecords("INSERT SUBFORM API NAME HERE"); 
-productmap = Map();
-for each  p in producttable
+productTable = zoho.crm.getRecords("INSERT SUBFORM API NAME HERE"); 
+productMap = Map();
+for each  p in productTable
 {
 	mp = Map();
 	mp.put("Quantity",0);
 	mp.put("Subtotal",0);
 	prod = p.get("Product_Name");             //Replace the API name accordingly
-	productmap.put(prod.get("name"),mp);      //Replace the API name accordingly
+	productMap.put(prod.get("name"),mp);      //Replace the API name accordingly
 }
 
-for each  p in producttable
+for each  p in productTable
 {
 	mp = Map();
-	mp.put("Quantity",productmap.get(p.get("Product_Name").get("name")).get("Quantity").toLong() + p.get("Quantity"));  
-	mp.put("Subtotal",productmap.get(p.get("Product_Name").get("name")).get("Subtotal").toLong() + p.get("Subtotal"));
-	productmap.put(p.get("Product_Name").get("name"),mp);
+	mp.put("Quantity",productMap.get(p.get("Product_Name").get("name")).get("Quantity").toLong() + p.get("Quantity"));  
+	mp.put("Subtotal",productMap.get(p.get("Product_Name").get("name")).get("Subtotal").toLong() + p.get("Subtotal"));
+	productMap.put(p.get("Product_Name").get("name"),mp);
 }
 
 //Replace the following API name accordingly - "Quantity", "Subtotal", "Product_Name", "name"
