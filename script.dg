@@ -5,8 +5,8 @@ for each  p in producttable
 	mp = Map();
 	mp.put("Quantity",0);
 	mp.put("Subtotal",0);
-	prod = p.get("Product_Name");             //Replace this with the API name of your key
-	productmap.put(prod.get("name"),mp);      //Replace this with the API name of your key
+	prod = p.get("Product_Name");             //Replace the API name accordingly
+	productmap.put(prod.get("name"),mp);      //Replace the API name accordingly
 }
 
 for each  p in producttable
@@ -17,4 +17,4 @@ for each  p in producttable
 	productmap.put(p.get("Product_Name").get("name"),mp);
 }
 
-//Replace the following with your API name - "Quantity", "Subtotal", "Product_Name", "name"
+//Replace the following API name accordingly - "Quantity", "Subtotal", "Product_Name", "name"
