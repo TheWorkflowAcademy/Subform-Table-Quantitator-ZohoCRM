@@ -21,12 +21,12 @@ for each  p in producttable
 	mp = Map();
 	mp.put("Quantity",0);
 	mp.put("Subtotal",0);
-	prod = p.get("Product_Name");             //Replace this with the API name of your key
-	productmap.put(prod.get("name"),mp);      //Replace this with the API name of your key
+	prod = p.get("Product_Name");             //Replace the API name accordingly
+	productmap.put(prod.get("name"),mp);      //Replace the API name accordingly
 }
 ```
 ### Perform the Summation
-Creat another `loop` to get the sum of the qty/subtotal for each product by adding them up at every iteration while remapping var *producttable*. This works because when the specified key is already present in the map-variable, the key's associated value is replaced with the new given value (learn more: 
+Create another `loop` to get the sum of the qty/subtotal for each product by adding them up at every iteration while remapping var *producttable*. This works because when the specified key is already present in the map-variable, the key's associated value is replaced with the new given value (learn more: 
 https://www.zoho.com/creator/help/script/put-key.html). Once the iteration is complete, var *productmap* will contain the total qty & subtotal of the subform.
 
 ```javascript
@@ -38,7 +38,7 @@ for each  p in producttable
 	productmap.put(p.get("Product_Name").get("name"),mp);
 }
 
-//Replace the following with your API name - "Quantity", "Subtotal", "Product_Name", "name"
+//Replace the following API name accordingly - "Quantity", "Subtotal", "Product_Name", "name"
 ```
 
 ### Disclaimer
