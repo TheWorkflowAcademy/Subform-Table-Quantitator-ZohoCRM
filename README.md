@@ -41,4 +41,4 @@ for each  p in producttable
 ```
 
 ### Disclaimer
-If you have null values in any of the subform columns, you'll need to add **null checks** to prevent the script from erroring.
+If you have null values in any of the subform columns, you'll need to add **null checks** to prevent the script from running into an error.
