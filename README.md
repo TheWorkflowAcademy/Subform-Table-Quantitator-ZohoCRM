@@ -27,7 +27,7 @@ for each  p in producttable
 ```
 ### Perform the Summation
 Create another `loop` to get the sum of the qty/subtotal for each product by adding them up at every iteration while remapping var *producttable*. This works because when the specified key is already present in the map-variable, the key's associated value is replaced with the new given value (learn more: 
-https://www.zoho.com/creator/help/script/put-key.html). Once the iteration is complete, var *productmap* will contain the total qty & subtotal of the subform.
+https://www.zoho.com/creator/help/script/put-key.html). Once the iteration is complete, var *productmap* will contain the total qty & subtotal of each product in the subform.
 
 ```javascript
 for each  p in producttable
