@@ -21,8 +21,7 @@ for each  p in producttable
 	mp = Map();
 	mp.put("Quantity",0);
 	mp.put("Subtotal",0);
-	prod = p.get("Product_Name");             //Replace the API name accordingly
-	productMap.put(prod.get("name"),mp);      //Replace the API name accordingly
+	productMap.put(p.get("Product_Name").get("name"),mp);	//Replace the API name accordingly
 }
 ```
 ### Perform the Summation
